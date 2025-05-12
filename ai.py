@@ -1,3 +1,4 @@
+import pickle
 import random
 import logging
 
@@ -22,6 +23,18 @@ class MarkovChain:
             self.chain[seq].append(next_item)
 
         logger.debug(f"Markov Chain trained with {len(self.chain)} unique n-grams")
+
+    def update(self, data):
+        """Update the model with new data without resetting it"""
+        logger.debug("Updating Markov Chain with new data...")
+        for i in range(len(data) - self.n):
+            seq = tuple(data[i:i+self.n])  # Create n-gram sequence
+            next_item = data[i+self.n] if i+self.n < len(data) else None
+            if seq not in self.chain:
+                self.chain[seq] = []
+            self.chain[seq].append(next_item)
+
+        logger.debug(f"Markov Chain updated with {len(self.chain)} unique n-grams")
 
     def generate_sentence(self, length=10):
         logger.debug(f"Generating sentence of length {length}")
@@ -58,19 +71,41 @@ def load_data(file_path, top_n=3000):
     logger.debug(f"Loaded {len(top_data)} most frequent terms.")
     return [term[0] for term in top_data]
 
-# Main function to train the AI and generate text
+# Function to load an existing Markov Chain model from a file, if it exists
+def load_model(model_path, n=3):
+    try:
+        with open(model_path, 'rb') as f:
+            model = pickle.load(f)
+        logger.debug("Loaded existing Markov Chain model.")
+    except (FileNotFoundError, EOFError):
+        model = MarkovChain(n=n)
+        logger.debug("No existing model found. Starting fresh.")
+    return model
+
+# Function to save the Markov Chain model to a file
+def save_model(model, model_path):
+    with open(model_path, 'wb') as f:
+        pickle.dump(model, f)
+    logger.debug(f"Saved Markov Chain model to {model_path}.")
+
+# Main function to train or update the AI and generate text
 def main():
-    # Load the data from the frequency file
+    # Paths for model and data
+    model_path = "markov_model.pkl"  # Path to your existing model (or new file)
     file_path = "hanziai.mar"  # Path to your frequency file
     top_n = 3000  # Number of top terms to train on
+    
+    # Load the data from the frequency file
     data = load_data(file_path, top_n)
 
-    # Initialize the Markov Chain
-    markov_chain = MarkovChain(n=3)
-    logger.debug(f"Training Markov Chain with top {top_n} terms.")
+    # Load or create a new Markov Chain model
+    markov_chain = load_model(model_path, n=3)
     
-    # Train the model
-    markov_chain.train(data)
+    # Update the model with new data
+    markov_chain.update(data)
+
+    # Save the updated model
+    save_model(markov_chain, model_path)
 
     # Generate a sentence
     generated_sentence = markov_chain.generate_sentence(length=10)
@@ -79,4 +114,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
