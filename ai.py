@@ -2,115 +2,135 @@ import pickle
 import random
 import logging
 
-# Set up logging for debugging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 
-# Markov Chain Class
 class MarkovChain:
     def __init__(self, n=3):
         self.n = n
         self.chain = {}
-        logger.debug(f"MarkovChain initialized with n={n}")
-
-    def train(self, data):
-        logger.debug("Training Markov Chain...")
-        for i in range(len(data) - self.n):
-            seq = tuple(data[i:i+self.n])  # Create n-gram sequence
-            next_item = data[i+self.n] if i+self.n < len(data) else None
-            if seq not in self.chain:
-                self.chain[seq] = []
-            self.chain[seq].append(next_item)
-
-        logger.debug(f"Markov Chain trained with {len(self.chain)} unique n-grams")
 
     def update(self, data):
-        """Update the model with new data without resetting it"""
-        logger.debug("Updating Markov Chain with new data...")
+        logger.debug("Updating Markov Chain...")
         for i in range(len(data) - self.n):
-            seq = tuple(data[i:i+self.n])  # Create n-gram sequence
-            next_item = data[i+self.n] if i+self.n < len(data) else None
-            if seq not in self.chain:
-                self.chain[seq] = []
-            self.chain[seq].append(next_item)
+            seq = tuple(data[i:i + self.n])
+            next_item = data[i + self.n] if i + self.n < len(data) else None
+            self.chain.setdefault(seq, []).append(next_item)
+        logger.debug(f"Markov chain now has {len(self.chain)} states")
 
-        logger.debug(f"Markov Chain updated with {len(self.chain)} unique n-grams")
+    def generate_sentence(self, length, pos_pattern=None):
+        logger.debug(f"Generating sentence of length {length} with POS pattern {pos_pattern}")
 
-    def generate_sentence(self, length=10):
-        logger.debug(f"Generating sentence of length {length}")
-        start = random.choice(list(self.chain.keys()))
-        sentence = list(start)
-        for _ in range(length - self.n):
-            state = tuple(sentence[-self.n:])
-            if state in self.chain:
-                next_item = random.choice(self.chain[state])
-                if next_item is None:
-                    break
-                sentence.append(next_item)
+        if not self.chain:
+            logger.warning("Empty Markov chain; cannot generate sentence.")
+            return ""
+
+        # Filter start sequences matching the start POS pattern if provided
+        if pos_pattern and len(pos_pattern) >= self.n:
+            candidates = [seq for seq in self.chain.keys()
+                          if all(seq[i][1] == pos_pattern[i] for i in range(self.n))]
+            if not candidates:
+                logger.warning("No starting sequence matches the POS pattern start; picking random.")
+                start = random.choice(list(self.chain.keys()))
             else:
-                logger.warning(f"State {state} not found in chain.")
+                start = random.choice(candidates)
+        else:
+            start = random.choice(list(self.chain.keys()))
+
+        sentence = list(start)
+        while len(sentence) < length:
+            state = tuple(sentence[-self.n:])
+            next_candidates = self.chain.get(state, [None])
+            if not next_candidates:
                 break
-        sentence_str = ''.join(sentence)
+            next_item = random.choice(next_candidates)
+            if next_item is None:
+                break
+            # If pos_pattern exists, check if next_item's POS matches pattern at current position
+            if pos_pattern:
+                next_pos_index = len(sentence)
+                if next_pos_index < len(pos_pattern):
+                    if next_item[1] != pos_pattern[next_pos_index]:
+                        # If no match, try other candidates, or break if none match
+                        filtered = [item for item in next_candidates if item and item[1] == pos_pattern[next_pos_index]]
+                        if filtered:
+                            next_item = random.choice(filtered)
+                        else:
+                            break
+            sentence.append(next_item)
+
+        # Trim to exact length
+        sentence = sentence[:length]
+
+        sentence_str = ''.join(word for word, pos in sentence)
         logger.debug(f"Generated sentence: {sentence_str}")
         return sentence_str
 
-# Function to load the frequency data from the .mar file
 def load_data(file_path, top_n=3000):
-    logger.debug(f"Loading data from {file_path}...")
-    data = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for line in file:
+    logger.debug(f"Loading data from {file_path}")
+    entries = []
+    with open(file_path, 'r', encoding='utf-8') as f:
+        for line in f:
             parts = line.strip().split('\t')
-            if len(parts) == 2:
-                character, frequency = parts
-                data.append((character, int(frequency)))
-    
-    # Sort by frequency and keep top_n most frequent terms
-    data.sort(key=lambda x: x[1], reverse=True)
-    top_data = data[:top_n]
-    logger.debug(f"Loaded {len(top_data)} most frequent terms.")
-    return [term[0] for term in top_data]
+            if len(parts) == 3:
+                word, freq_str, pos_str = parts
+                try:
+                    freq = int(freq_str)
+                    pos_tags = pos_str.split('/')
+                    entries.append(((word, pos_tags[-1]), freq))
+                except ValueError:
+                    logger.warning(f"Invalid freq: {line.strip()}")
+    entries.sort(key=lambda x: x[1], reverse=True)
+    limited = entries[:top_n]
+    data = [entry[0] for entry in limited]
+    logger.debug(f"Loaded {len(data)} unique word-POS pairs")
+    return data
 
-# Function to load an existing Markov Chain model from a file, if it exists
+def load_structures(structure_path):
+    logger.debug(f"Loading structures from {structure_path}")
+    structures = []
+    with open(structure_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            pos_seq = line.strip().split()
+            if pos_seq:
+                structures.append(pos_seq)
+    logger.debug(f"Loaded {len(structures)} POS structures")
+    return structures
+
 def load_model(model_path, n=3):
     try:
         with open(model_path, 'rb') as f:
             model = pickle.load(f)
-        logger.debug("Loaded existing Markov Chain model.")
+        logger.debug("Loaded existing Markov Chain model")
     except (FileNotFoundError, EOFError):
         model = MarkovChain(n=n)
-        logger.debug("No existing model found. Starting fresh.")
+        logger.debug("Created new Markov Chain model")
     return model
 
-# Function to save the Markov Chain model to a file
 def save_model(model, model_path):
     with open(model_path, 'wb') as f:
         pickle.dump(model, f)
-    logger.debug(f"Saved Markov Chain model to {model_path}.")
+    logger.debug(f"Saved Markov Chain model to {model_path}")
 
-# Main function to train or update the AI and generate text
 def main():
-    # Paths for model and data
-    model_path = "markov_model.pkl"  # Path to your existing model (or new file)
-    file_path = "hanziai.mar"  # Path to your frequency file
-    top_n = 3000  # Number of top terms to train on
-    
-    # Load the data from the frequency file
-    data = load_data(file_path, top_n)
+    corpus_path = "hanziai_pos.mar"
+    structure_path = "pos_structures.txt"
+    model_path = "markov_model.pkl"
+    top_n = 3000
+    n = 3
 
-    # Load or create a new Markov Chain model
-    markov_chain = load_model(model_path, n=3)
-    
-    # Update the model with new data
-    markov_chain.update(data)
+    data = load_data(corpus_path, top_n=top_n)
+    structures = load_structures(structure_path)
 
-    # Save the updated model
-    save_model(markov_chain, model_path)
+    model = load_model(model_path, n=n)
+    model.update(data)
+    save_model(model, model_path)
 
-    # Generate a sentence
-    generated_sentence = markov_chain.generate_sentence(length=10)
-    logger.debug(f"Generated sentence: {generated_sentence}")
-    print(f"Generated Sentence: {generated_sentence}")
+    # Pick a random structure and generate sentence
+    structure = random.choice(structures)
+    sentence = model.generate_sentence(length=len(structure), pos_pattern=structure)
+    print("POS structure:", ' '.join(structure))
+    print("Generated sentence:", sentence)
 
 if __name__ == "__main__":
     main()
