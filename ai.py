@@ -1,6 +1,7 @@
 import pickle
 import random
 import logging
+from punctest import punctuate  
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
@@ -18,14 +19,14 @@ class MarkovChain:
             self.chain.setdefault(seq, []).append(next_item)
         logger.debug(f"Markov chain now has {len(self.chain)} states")
 
+    # Modified: generate_sentence returns list of (word,pos) tuples
     def generate_sentence(self, length, pos_pattern=None):
         logger.debug(f"Generating sentence of length {length} with POS pattern {pos_pattern}")
 
         if not self.chain:
             logger.warning("Empty Markov chain; cannot generate sentence.")
-            return ""
+            return []
 
-        # Filter start sequences matching the start POS pattern if provided
         if pos_pattern and len(pos_pattern) >= self.n:
             candidates = [seq for seq in self.chain.keys()
                           if all(seq[i][1] == pos_pattern[i] for i in range(self.n))]
@@ -46,12 +47,10 @@ class MarkovChain:
             next_item = random.choice(next_candidates)
             if next_item is None:
                 break
-            # If pos_pattern exists, check if next_item's POS matches pattern at current position
             if pos_pattern:
                 next_pos_index = len(sentence)
                 if next_pos_index < len(pos_pattern):
                     if next_item[1] != pos_pattern[next_pos_index]:
-                        # If no match, try other candidates, or break if none match
                         filtered = [item for item in next_candidates if item and item[1] == pos_pattern[next_pos_index]]
                         if filtered:
                             next_item = random.choice(filtered)
@@ -59,14 +58,9 @@ class MarkovChain:
                             break
             sentence.append(next_item)
 
-        # Trim to exact length
-        sentence = sentence[:length]
+        return sentence[:length]
 
-        sentence_str = ''.join(word for word, pos in sentence)
-        logger.debug(f"Generated sentence: {sentence_str}")
-        return sentence_str
-
-def load_data(file_path, top_n=10000):
+def load_data(file_path, sample_size=3000):
     logger.debug(f"Loading data from {file_path}")
     entries = []
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -80,10 +74,18 @@ def load_data(file_path, top_n=10000):
                     entries.append(((word, pos_tags[-1]), freq))
                 except ValueError:
                     logger.warning(f"Invalid freq: {line.strip()}")
-    entries.sort(key=lambda x: x[1], reverse=True)
-    limited = entries[:top_n]
-    data = [entry[0] for entry in limited]
-    logger.debug(f"Loaded {len(data)} unique word-POS pairs")
+
+    logger.debug(f"Total entries loaded: {len(entries)}")
+
+    if len(entries) > sample_size:
+        sampled_entries = random.sample(entries, sample_size)
+    else:
+        sampled_entries = entries
+
+    sampled_entries.sort(key=lambda x: x[1], reverse=True)
+
+    data = [entry[0] for entry in sampled_entries]
+    logger.debug(f"Sampled {len(data)} word-POS pairs for training")
     return data
 
 def load_structures(structure_path):
@@ -119,18 +121,20 @@ def main():
     top_n = 3000
     n = 3
 
-    data = load_data(corpus_path, top_n=top_n)
+    data = load_data(corpus_path, sample_size=top_n)
     structures = load_structures(structure_path)
 
     model = load_model(model_path, n=n)
     model.update(data)
     save_model(model, model_path)
 
-    # Pick a random structure and generate sentence
     structure = random.choice(structures)
-    sentence = model.generate_sentence(length=len(structure), pos_pattern=structure)
+    sentence_tuples = model.generate_sentence(length=len(structure), pos_pattern=structure)
     print("POS structure:", ' '.join(structure))
-    print("Generated sentence:", sentence)
+
+    # Use punctuate from punctest on the list of (word,pos) tuples
+    sentence_with_punc = punctuate(sentence_tuples)
+    print("Generated sentence with punctuation:", sentence_with_punc)
 
 if __name__ == "__main__":
     main()
