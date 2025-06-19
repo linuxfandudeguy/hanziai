@@ -1,7 +1,7 @@
 import pickle
 import random
 import logging
-from punctest import punctuate  
+from punc import punctuate  
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
