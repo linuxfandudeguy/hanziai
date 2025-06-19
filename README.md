@@ -1,6 +1,9 @@
 # <ruby> 漢 <rp>(</rp><rt>hàn</rt><rp>)</rp>字 <rp>(</rp><rt>zì</rt><rp>)</rp></ruby>AI
 
- <ruby> 漢 <rp>(</rp><rt>hàn</rt><rp>)</rp>字 <rp>(</rp><rt>zì</rt><rp>)</rp></ruby>AI is a markov chain AI programmed in Python made to speak chinese.
+ <ruby> 漢 <rp>(</rp><rt>hàn</rt><rp>)</rp>字 <rp>(</rp><rt>zì</rt><rp>)</rp></ruby>AI is a markov chain AI programmed in Python made to speak <ruby>
+  中<rp>(</rp><rt>zhōng</rt><rp>)</rp>
+  文<rp>(</rp><rt>wén</rt><rp>)</rp>
+</ruby> (Chinese).
 
 
 # first words
