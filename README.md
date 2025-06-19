@@ -35,6 +35,7 @@ the `markov_model.pkl` file can bloat up and slow down the computer if not delet
 - > "*不划算不免不光彩?*"
 - > "*早日旨在，日本米酒日月蹉跎.*"
 - > "*没门儿没说的没有不透风的墙没口。*"
+- > "* 酒店业酒不醉人人自醉，色不迷人人自迷酌加？*"
 
 
 
