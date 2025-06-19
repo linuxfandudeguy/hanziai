@@ -18,6 +18,10 @@
 
 # devlog
 <details>
+<summary><blockquote>add pos (date unknown)</blockquote> </summary>
+<code> </code>
+</details>
+<details>
 <summary><blockquote>add punc (2025-06-19T17:39:20.366Z)</blockquote> </summary>
 <code>root in hanziai on  master [!?] via 🐍 v3.10.12
 ❯ python3 ai.py
