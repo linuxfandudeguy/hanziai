@@ -19,7 +19,7 @@
 # devlog
 <details>
 <summary><blockquote>add pos (date unknown)</blockquote> </summary>
-<code> </code>
+<code>https://github.com/linuxfandudeguy/hanziai/blob/master/pos_structures.txt </code>
 </details>
 <details>
 <summary><blockquote>add punc (2025-06-19T17:39:20.366Z)</blockquote> </summary>
