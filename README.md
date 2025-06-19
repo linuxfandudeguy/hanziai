@@ -28,6 +28,9 @@ the `markov_model.pkl` file can bloat up and slow down the computer if not delet
 ## funny/cursed sentences
 - > "*一把钥匙开一把锁，一把屎一把尿一心一德!*"
 - > "*要命，要，西双版纳粗榧.*"
+- > "*遵医嘱适温远隔千里？*"
+- > "*见方要么要旨要强.*
+
 
 
 
