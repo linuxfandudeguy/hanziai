@@ -66,7 +66,7 @@ class MarkovChain:
         logger.debug(f"Generated sentence: {sentence_str}")
         return sentence_str
 
-def load_data(file_path, top_n=3000):
+def load_data(file_path, top_n=10000):
     logger.debug(f"Loading data from {file_path}")
     entries = []
     with open(file_path, 'r', encoding='utf-8') as f:
