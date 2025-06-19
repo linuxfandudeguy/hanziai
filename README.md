@@ -8,9 +8,9 @@
 # dependencies
 surprise there is non
 # tools used
-`pickle` - used as a save file state so the ai can learn more words the more you use it
-`jieba` - used to tag the dataset used
-`cc-cedict` - dataset used
+1. `pickle` - used as a save file state so the ai can learn more words the more you use it
+2. `jieba` - used to tag the dataset used
+3. `cc-cedict` - dataset used
 # first words
 
 > "***龙口市龙口夺食龙口龙胜县龙胜各族自治县龙利叶龙利龙人龙亭区龙亭龙井茶龙井市龙井区龙井龙齾龌龊龌浊龌腭裂***"
