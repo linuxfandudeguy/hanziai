@@ -1,4 +1,51 @@
 r v n
+r v d a n
+n v n
+r v n u
+n d v n
+n v d a
 n v a n
-nr v n u
-r v p ns
+t n v n
+r v v n
+d a n v
+n p n v
+r u n v
+n u v a
+v n v
+r d v n
+d a n
+n v c n
+n v u v
+n v q n
+t r v n
+v n u
+n v p n
+r v p n
+r d v a
+r v u a
+n d v q n
+n v d v
+r d v u
+n v n u
+d r v n
+v r v n
+r v z n
+r v v v
+n v n v
+t r v v
+r v d n
+n u d v
+n v p r
+v n c v n
+r v d a n
+n d a v
+n p r v n
+d v n v
+n c n v
+n v d v a
+n u n
+r v n v
+t v n v
+r v r v
+r d v d a
+n v r d a
