@@ -30,7 +30,7 @@
 2025-06-19 13:14:09,727 - DEBUG - Updating Markov Chain...
 2025-06-19 13:14:09,729 - DEBUG - Markov chain now has 35964 states
 2025-06-19 13:14:09,759 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:14:09,759 - DEBUG - Generating sentence of length 4 with POS pattern ['n', 'v', 'n', 'a']
+2025-06-19 13:14:09,759 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;n&#39;, &#39;v&#39;, &#39;n&#39;, &#39;a&#39;]
 POS structure: n v n a
 Generated sentence with punctuation: 糖醇糊弄，精肉？
 
@@ -45,7 +45,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:16:28,856 - DEBUG - Updating Markov Chain...
 2025-06-19 13:16:28,858 - DEBUG - Markov chain now has 38961 states
 2025-06-19 13:16:28,889 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:16:28,889 - DEBUG - Generating sentence of length 4 with POS pattern ['d', 'v', 'v', 'n']
+2025-06-19 13:16:28,889 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;d&#39;, &#39;v&#39;, &#39;v&#39;, &#39;n&#39;]
 POS structure: d v v n
 Generated sentence with punctuation: 老来少翻转，翻沉？
 
@@ -60,7 +60,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:16:33,673 - DEBUG - Updating Markov Chain...
 2025-06-19 13:16:33,675 - DEBUG - Markov chain now has 41958 states
 2025-06-19 13:16:33,709 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:16:33,709 - DEBUG - Generating sentence of length 4 with POS pattern ['n', 'u', 'v', 'n']
+2025-06-19 13:16:33,709 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;n&#39;, &#39;u&#39;, &#39;v&#39;, &#39;n&#39;]
 2025-06-19 13:16:33,721 - WARNING - No starting sequence matches the POS pattern start; picking random.
 POS structure: n u v n
 Generated sentence with punctuation: 干煸四季豆，乳头瘤乳臭未干乳糖？
@@ -76,7 +76,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:17:45,818 - DEBUG - Updating Markov Chain...
 2025-06-19 13:17:45,821 - DEBUG - Markov chain now has 44954 states
 2025-06-19 13:17:45,855 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:17:45,855 - DEBUG - Generating sentence of length 4 with POS pattern ['v', 'r', 'v', 'n']
+2025-06-19 13:17:45,855 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;v&#39;, &#39;r&#39;, &#39;v&#39;, &#39;n&#39;]
 POS structure: v r v n
 Generated sentence with punctuation: 佩服你作为，作数。
 
@@ -91,7 +91,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:20:06,994 - DEBUG - Updating Markov Chain...
 2025-06-19 13:20:06,996 - DEBUG - Markov chain now has 47951 states
 2025-06-19 13:20:07,032 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:20:07,032 - DEBUG - Generating sentence of length 2 with POS pattern ['n', 'a']
+2025-06-19 13:20:07,032 - DEBUG - Generating sentence of length 2 with POS pattern [&#39;n&#39;, &#39;a&#39;]
 POS structure: n a
 Generated sentence with punctuation: 一秘一睹！
 
@@ -106,12 +106,12 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:21:02,627 - DEBUG - Updating Markov Chain...
 2025-06-19 13:21:02,629 - DEBUG - Markov chain now has 50948 states
 2025-06-19 13:21:02,678 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:21:02,678 - DEBUG - Generating sentence of length 5 with POS pattern ['n', 'v', 'c', 'n', 'v']
+2025-06-19 13:21:02,678 - DEBUG - Generating sentence of length 5 with POS pattern [&#39;n&#39;, &#39;v&#39;, &#39;c&#39;, &#39;n&#39;, &#39;v&#39;]
 POS structure: n v c n v
 Generated sentence with punctuation: 世运丕变且说！
 
 root in hanziai on  master [!?] via 🐍 v3.10.12
-❯ \python3 ai.py'
+❯ \python3 ai.py&#39;
 ∙ ^C
 
 root in hanziai on  master [!?] via 🐍 v3.10.12
@@ -125,7 +125,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:23:13,433 - DEBUG - Updating Markov Chain...
 2025-06-19 13:23:13,442 - DEBUG - Markov chain now has 53944 states
 2025-06-19 13:23:13,491 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:23:13,491 - DEBUG - Generating sentence of length 6 with POS pattern ['r', 'v', 'n', 'c', 'v', 'n']
+2025-06-19 13:23:13,491 - DEBUG - Generating sentence of length 6 with POS pattern [&#39;r&#39;, &#39;v&#39;, &#39;n&#39;, &#39;c&#39;, &#39;v&#39;, &#39;n&#39;]
 POS structure: r v n c v n
 Generated sentence with punctuation: 你作为，作数。
 
@@ -140,7 +140,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:24:50,965 - DEBUG - Updating Markov Chain...
 2025-06-19 13:24:50,967 - DEBUG - Markov chain now has 56941 states
 2025-06-19 13:24:51,018 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:24:51,018 - DEBUG - Generating sentence of length 4 with POS pattern ['a', 'c', 'a', 'n']
+2025-06-19 13:24:51,018 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;a&#39;, &#39;c&#39;, &#39;a&#39;, &#39;n&#39;]
 2025-06-19 13:24:51,034 - WARNING - No starting sequence matches the POS pattern start; picking random.
 POS structure: a c a n
 Generated sentence with punctuation: 新几内亚新官上任三把火斯蒂文！
@@ -156,7 +156,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:27:58,389 - DEBUG - Updating Markov Chain...
 2025-06-19 13:27:58,391 - DEBUG - Markov chain now has 59938 states
 2025-06-19 13:27:58,442 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:27:58,442 - DEBUG - Generating sentence of length 4 with POS pattern ['v', 'r', 'v', 'n']
+2025-06-19 13:27:58,442 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;v&#39;, &#39;r&#39;, &#39;v&#39;, &#39;n&#39;]
 POS structure: v r v n
 Generated sentence with punctuation: 佩服你作为，作数！
 
@@ -171,7 +171,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:28:14,232 - DEBUG - Updating Markov Chain...
 2025-06-19 13:28:14,234 - DEBUG - Markov chain now has 62935 states
 2025-06-19 13:28:14,286 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:28:14,286 - DEBUG - Generating sentence of length 4 with POS pattern ['n', 'v', 'v', 'n']
+2025-06-19 13:28:14,286 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;n&#39;, &#39;v&#39;, &#39;v&#39;, &#39;n&#39;]
 POS structure: n v v n
 Generated sentence with punctuation: 飞艇飘香，飘舞。
 
@@ -186,7 +186,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:28:15,484 - DEBUG - Updating Markov Chain...
 2025-06-19 13:28:15,486 - DEBUG - Markov chain now has 65931 states
 2025-06-19 13:28:15,541 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:28:15,541 - DEBUG - Generating sentence of length 4 with POS pattern ['n', 'd', 'v', 'a']
+2025-06-19 13:28:15,541 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;n&#39;, &#39;d&#39;, &#39;v&#39;, &#39;a&#39;]
 POS structure: n d v a
 Generated sentence with punctuation: 制裁到场删掉。
 
@@ -201,7 +201,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:30:17,440 - DEBUG - Updating Markov Chain...
 2025-06-19 13:30:17,442 - DEBUG - Markov chain now has 68927 states
 2025-06-19 13:30:17,495 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:30:17,495 - DEBUG - Generating sentence of length 3 with POS pattern ['r', 'v', 'n']
+2025-06-19 13:30:17,495 - DEBUG - Generating sentence of length 3 with POS pattern [&#39;r&#39;, &#39;v&#39;, &#39;n&#39;]
 POS structure: r v n
 Generated sentence with punctuation: 反正一样反射区治疗，反问语气！
 
@@ -216,7 +216,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:30:59,589 - DEBUG - Updating Markov Chain...
 2025-06-19 13:30:59,590 - DEBUG - Markov chain now has 71922 states
 2025-06-19 13:30:59,645 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:30:59,645 - DEBUG - Generating sentence of length 5 with POS pattern ['d', 'd', 'v', 'a', 'n']
+2025-06-19 13:30:59,645 - DEBUG - Generating sentence of length 5 with POS pattern [&#39;d&#39;, &#39;d&#39;, &#39;v&#39;, &#39;a&#39;, &#39;n&#39;]
 POS structure: d d v a n
 Generated sentence with punctuation: 逐次逐个逆袭！
 
@@ -231,7 +231,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:32:28,561 - DEBUG - Updating Markov Chain...
 2025-06-19 13:32:28,563 - DEBUG - Markov chain now has 74919 states
 2025-06-19 13:32:28,619 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:32:28,619 - DEBUG - Generating sentence of length 4 with POS pattern ['n', 'd', 'v', 'a']
+2025-06-19 13:32:28,619 - DEBUG - Generating sentence of length 4 with POS pattern [&#39;n&#39;, &#39;d&#39;, &#39;v&#39;, &#39;a&#39;]
 POS structure: n d v a
 Generated sentence with punctuation: 配方酌量酌酒？
 
@@ -246,7 +246,7 @@ root in hanziai on  master [!?] via 🐍 v3.10.12
 2025-06-19 13:33:25,085 - DEBUG - Updating Markov Chain...
 2025-06-19 13:33:25,086 - DEBUG - Markov chain now has 77915 states
 2025-06-19 13:33:25,144 - DEBUG - Saved Markov Chain model to markov_model.pkl
-2025-06-19 13:33:25,144 - DEBUG - Generating sentence of length 5 with POS pattern ['d', 'v', 'n', 'c', 'n']
+2025-06-19 13:33:25,144 - DEBUG - Generating sentence of length 5 with POS pattern [&#39;d&#39;, &#39;v&#39;, &#39;n&#39;, &#39;c&#39;, &#39;n&#39;]
 POS structure: d v n c n
 Generated sentence with punctuation: 相声相聚，相片！ </code>
 </details>
