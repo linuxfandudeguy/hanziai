@@ -26,6 +26,7 @@ the `markov_model.pkl` file can bloat up and slow down the computer if not delet
 
 - > "*鬼名堂鬼叫鬼剃头*"
 - > "*老年期老少翻覆，翡冷翠?*"
+- > "*大约大热大湄公河次区域？"
 ## funny/cursed sentences
 - > "*一把钥匙开一把锁，一把屎一把尿一心一德!*"
 - > "*要命，要，西双版纳粗榧.*"
@@ -38,7 +39,7 @@ the `markov_model.pkl` file can bloat up and slow down the computer if not delet
 - > "* 没有脸皮没劲儿沉沉?*"
 - > "*下台阶下毒手，下次见.*"
 - > "*地球磁场地方自治，地垄*"
--> "*出盘出界，出生日期*
+- > "*出盘出界，出生日期*
 
 
 
