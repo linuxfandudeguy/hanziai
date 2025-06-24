@@ -37,6 +37,9 @@ the `markov_model.pkl` file can bloat up and slow down the computer if not delet
 - > "*没门儿没说的没有不透风的墙没口。*"
 - > "* 没有脸皮没劲儿沉沉?*"
 - > "*下台阶下毒手，下次见.*"
+- > "*地球磁场地方自治，地垄*"
+-> "*出盘出界，出生日期*
+
 
 
 
