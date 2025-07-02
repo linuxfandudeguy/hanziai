@@ -32,9 +32,14 @@ surprise there is non
 the `markov_model.pkl` file can bloat up and slow down the computer if not deleted regularly.
 
 ## about mar (WARNING)
-The .mar files used in this project are not related to the typical Mozilla Archive files, Microsoft Access Report Shortcuts, MSN Archives or Model Archives.
+The .mar files used in this project are not related to the typical 
 
-in this project, .mar simply stands for markov and contains the data needed
+- Mozilla Archive files, 
+- Microsoft Access Report Shortcuts, 
+- MSN Archives or
+- Model Archives.
+
+in this project, .mar simply stands for markov and contains the data needed.
 
 they are not compatible with other .mar file utilities you might find.
 
