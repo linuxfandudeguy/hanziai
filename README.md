@@ -8,6 +8,8 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/linuxfandudeguy/hanziai?style=social)
 ![GitHub issues](https://img.shields.io/github/issues/linuxfandudeguy/hanziai)
 ![GitHub license](https://img.shields.io/github/license/linuxfandudeguy/hanziai)
+  [![HitCount](https://hits.dwyl.com/linxufandudeguy/hanziai.svg?style=flat-square)](http://hits.dwyl.com/linxufandudeguy/hanziai)
+
 
 
 
