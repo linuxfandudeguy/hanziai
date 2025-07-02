@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run script
-        run: python your_script.py
+        run: python ai.py
