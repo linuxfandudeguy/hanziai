@@ -30,7 +30,21 @@ surprise there is non
 
 # warning
 the `markov_model.pkl` file can bloat up and slow down the computer if not deleted regularly.
+
+## about mar (WARNING)
+The .mar files used in this project are not related to the typical Mozilla Archive files, Microsoft Access Report Shortcuts, MSN Archives or Model Archives.
+
+in this project, .mar simply stands for markov and contains the data needed
+
+they are not compatible with other .mar file utilities you might find.
+
+
+
+
 # first words
+
+
+
 
 > "***龙口市龙口夺食龙口龙胜县龙胜各族自治县龙利叶龙利龙人龙亭区龙亭龙井茶龙井市龙井区龙井龙齾龌龊龌浊龌腭裂***"
 
