@@ -3,7 +3,11 @@
 ![Screenshot 2025-07-02 113642](%2FScreenshot%202025-07-02%20113642.png)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/linuxfandudeguy/hanziai/blob/master/hanziai.ipynb) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Made with Python](https://img.shields.io/badge/Made%20with-Python-ff69b4?style=flat&logo=python&logoColor=white)](https://www.python.org/) [![Build Status](https://github.com/linuxfandudeguy/hanziai/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/REPO/actions/workflows/ci.yml) [![Made with ❤️ Jupyter](https://img.shields.io/badge/Made%20with-%E2%9D%A4%20Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)](https://jupyter.org/)
-
+![GitHub stars](https://img.shields.io/github/stars/linuxfandudeguy/hanziai?style=social)
+![GitHub forks](https://img.shields.io/github/forks/linuxfandudeguy/hanziai?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/linuxfandudeguy/hanziai?style=social)
+![GitHub issues](https://img.shields.io/github/issues/linuxfandudeguy/hanziai)
+![GitHub license](https://img.shields.io/github/license/linuxfandudeguy/hanziai)
 
 
 
