@@ -8,6 +8,8 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/linuxfandudeguy/hanziai?style=social)
 ![GitHub issues](https://img.shields.io/github/issues/linuxfandudeguy/hanziai)
 ![GitHub license](https://img.shields.io/github/license/linuxfandudeguy/hanziai)
+![Maintenance](https://img.shields.io/maintenance/yes/2025)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)
 
 
 
