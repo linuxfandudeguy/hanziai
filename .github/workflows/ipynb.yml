@@ -1,0 +1,4 @@
+  - name: IPYNB to MD
+  # You may pin to the exact commit or the version.
+  # uses: SFLScientific/IPYNB_to_MD@f2627c56223046f2acdc72de4a9beb3a281e9915
+  uses: SFLScientific/IPYNB_to_MD@1.0
