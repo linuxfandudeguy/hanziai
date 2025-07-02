@@ -1,4 +1,7 @@
 # <ruby> 漢 <rp>(</rp><rt>hàn</rt><rp>)</rp>字 <rp>(</rp><rt>zì</rt><rp>)</rp></ruby>AI
+
+![Screenshot 2025-07-02 113642](https://github.com/user-attachments/assets/5040f514-06be-476f-8dfe-827c3c6df02f)
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/linuxfandudeguy/hanziai/blob/master/hanziai.ipynb) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Made with Python](https://img.shields.io/badge/Made%20with-Python-ff69b4?style=flat&logo=python&logoColor=white)](https://www.python.org/) [![Build Status](https://github.com/linuxfandudeguy/hanziai/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/REPO/actions/workflows/ci.yml)
 
 
