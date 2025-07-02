@@ -2,6 +2,7 @@
 <a href="https://colab.research.google.com/github/linuxfandudeguy/hanziai/blob/master/hanziai.ipynb" target="_parent">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
  <ruby> 漢 <rp>(</rp><rt>hàn</rt><rp>)</rp>字 <rp>(</rp><rt>zì</rt><rp>)</rp></ruby>AI is a markov chain AI programmed in Python made to speak <ruby>
