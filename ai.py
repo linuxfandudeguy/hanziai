@@ -115,9 +115,9 @@ def save_model(model, model_path):
     logger.debug(f"Saved Markov Chain model to {model_path}")
 
 def main():
-    corpus_path = "hanziai_pos.mar"
-    structure_path = "pos_structures.txt"
-    model_path = "markov_model.pkl"
+    corpus_path = "./hanziai_pos.mar"
+    structure_path = "./pos_structures.txt"
+    model_path = "./markov_model.pkl"
     top_n = 3000
     n = 3
 
